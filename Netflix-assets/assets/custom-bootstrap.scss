@@ -1,27 +1,29 @@
 @import './scss/functions'; 
-@import './scss/variables'; 
-
-
-
-
-
+@import './scss/variables';
 @import './scss/maps';
+
+$font-sizes: map-merge(
+  $font-sizes,
+  (
+    7: 3rem,
+    8: 4rem,
+    xs: 0.75rem
+  )
+);
+
 @import './scss/mixins';
 @import './scss/utilities';
 
 $utilities: map-merge(
   $utilities,
   (
-    'font-size':
-      map-merge(
-        map-get($utilities, 'font-size'),
-        (
-          responsive: true,
-        )
-      ),
+    'font-size':  map-merge(
+      map-get($utilities, 'font-size'),
+      (
+        responsive: true,
+      )
+    ),
   )
 );
 
-
-
-@import './scss/bootstrap.scss';
+@import './scss/bootstrap';
